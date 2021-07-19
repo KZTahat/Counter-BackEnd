@@ -1,0 +1,26 @@
+{
+  "name": "counter-backend",
+  "version": "1.0.0",
+  "description": "creating a shopping cart where you can add products to",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KZTahat/Counter-BackEnd.git"
+  },
+  "keywords": [
+    "tahat"
+  ],
+  "author": "Khaled Tahat",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/KZTahat/Counter-BackEnd/issues"
+  },
+  "homepage": "https://github.com/KZTahat/Counter-BackEnd#readme",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
