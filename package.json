@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/KZTahat/Counter-BackEnd#readme",
   "dependencies": {
+    "mongoose": "^5.13.3",
     "nodemon": "^2.0.12"
   }
 }
