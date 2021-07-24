@@ -29,18 +29,22 @@ server.get("/getlists", getTrendingMovies);
 
 async function getTrendingMovies(req, res) {
   let flag = false;
-  await utilities.movieModel.find((error, data) => {
-    if (error) {
-    } else {
-      if (data.length == 0) {
-        flag = true;
+  try{
+    await utilities.movieModel.find((error, data) => {
+      if (error) {
       } else {
-        res.send(data);
+        if (data.length == 0) {
+          flag = true;
+        } else {
+          res.send(data);
+        }
       }
-    }
-  });
-  if (flag == true) {
-    try {
+    });
+  } catch(error){
+    console.log('Model Error Line 33');
+  }
+  try {
+    if (flag == true) {
       let response = await axios.get(
         `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIES_DB_API_KEY}&query=a`
       );
@@ -72,9 +76,9 @@ async function getTrendingMovies(req, res) {
         return addedObject;
       });
       res.send(filteredData);
-    } catch (error) {
-      console.log("something went wrong TRENDING");
     }
+  } catch (error) {
+    console.log("something went wrong TRENDING");
   }
 }
 
